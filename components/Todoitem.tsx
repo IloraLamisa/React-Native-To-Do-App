@@ -47,7 +47,7 @@ export default function TodoItem({ task, onToggle, onDelete, onUpdate }: TodoIte
 
   return (
     <View style={styles.card}>
-      {/* Checkbox on the left */}
+    
       <TouchableOpacity onPress={() => onToggle(task.id)} style={styles.checkbox}>
         <MaterialIcons
           name={task.completed ? "check-box" : "check-box-outline-blank"}
@@ -56,7 +56,7 @@ export default function TodoItem({ task, onToggle, onDelete, onUpdate }: TodoIte
         />
       </TouchableOpacity>
 
-      {/* Task text or edit input */}
+    
       {isEditing ? (
         <TextInput
           style={styles.editInput}
@@ -73,7 +73,7 @@ export default function TodoItem({ task, onToggle, onDelete, onUpdate }: TodoIte
         </TouchableOpacity>
       )}
 
-      {/* Edit / Cancel button */}
+     
       {isEditing ? (
         <TouchableOpacity onPress={handleCancel} style={styles.iconButton}>
           <MaterialIcons name="cancel" size={22} color="#EF4444" />
@@ -84,7 +84,7 @@ export default function TodoItem({ task, onToggle, onDelete, onUpdate }: TodoIte
         </TouchableOpacity>
       )}
 
-      {/* Delete button */}
+    
       <TouchableOpacity onPress={() => onDelete(task.id)} style={styles.iconButton}>
         <MaterialIcons name="delete" size={22} color="#EF4444" />
       </TouchableOpacity>
@@ -96,12 +96,12 @@ const styles = StyleSheet.create({
   card: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#fff",
-    padding: 12,
+    backgroundColor: "#f4f4f4",
+    padding: 15,
     marginBottom: 10,
-    borderRadius: 8,
-    elevation: 2, // Android shadow
-    shadowColor: "#000", // iOS shadow
+    borderRadius: 32,
+    elevation: 4, 
+    shadowColor: "#000", 
     shadowOpacity: 0.1,
     shadowRadius: 4,
     shadowOffset: { width: 0, height: 2 },
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
   },
   completed: {
     textDecorationLine: "line-through",
-    color: "#9CA3AF", // muted gray when completed
+    color: "#9CA3AF", 
   },
   editInput: {
     flex: 1,
@@ -129,6 +129,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   iconButton: {
-    marginLeft: 10,
+    marginLeft: 15,
   },
 });
